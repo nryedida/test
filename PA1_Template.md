@@ -114,6 +114,6 @@ plot <- ggplot(amdf3, aes(x = interval , y = avgsteps, color = dayfactor)) +
     facet_wrap(~dayfactor, ncol = 1, nrow=2)
 plot
 ```
-![](fig/hist2.png)<!-- -->
+![](fig/panelplot.png)<!-- -->
 
 
