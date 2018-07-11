@@ -40,8 +40,8 @@ hist(amdf1$totalsteps, main = "Total number of steps taken each day", xlab = "To
 mean(amdf1$totalsteps)
 median(amdf1$totalsteps)
 ```
-mean = 9354.23
-median = 10395
+- **mean = 9354.23**
+- **median = 10395**
 
 ### What is the average daily activity pattern?
 ###### 1. Make a time series plot (i.e. ) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
@@ -57,18 +57,18 @@ plot(amdf2, type="l", main = "Average number of steps taken per interval", xlab 
 ```r
 amdf2[which.max(amdf2$avgsteps), ]$interval
 ```
-Interval 835 has the maximum steps across all days
+Interval **835** has the maximum steps across all days
 
 ###     Imputing missing values
 ###### 1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 ```r
 sum(is.na(amdf$steps))
 ```
-There are 2304 rows with NAs.
+There are **2304** rows with NAs.
 
 ###### 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, one could use the mean/median for that day, or the mean for that 5-minute interval, etc. Here we are going to impute NA in steps column with the mean of steps in that particular interval across all 61 days.
 
-    ```r
+```r
 step_values_to_impute <- amdf2$avgsteps[match(amdf$interval, amdf2$interval)]
 ```
 
@@ -93,8 +93,9 @@ hist(total_steps_by_date$steps, breaks = seq(0,25000, by=2500), main = "Total nu
 mean(total_steps_by_date$steps)
 median(total_steps_by_date$steps)
 ```
-mean = 10766.19
-median = 10766.19
+- **mean = 10766.19**
+- **median = 10766.19**
+
 ![](fig/hist2.png)<!-- -->
 
 ###### As a result of imputation the mean and median total number of steps per day has increased.
